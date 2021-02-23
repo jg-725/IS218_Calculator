@@ -1,7 +1,7 @@
 import math
 
 
-def squareroot (a):
+def root(a):
     x = float(a)
     return math.sqrt(x)
 
