@@ -1,7 +1,7 @@
 FROM python:3.7
 
-ADD ..
+ADD . .
 
 RUN pip install -r requirements.txt
 
-CMD [ "python", "tests/CalculatorTests.py"]
+CMD [ "python", "-m", "unittest", "discover", "-s", "tests"]
