@@ -13,7 +13,7 @@ class MyTestCase(unittest.TestCase):
         self.assertIsInstance(self.calculator, Calculator)
 
     def test_add_calculator(self):
-        unit_data = CsvReader('/tests/unitTests/UnitTestAddition').data
+        unit_data = CsvReader('./tests/unitTests/UnitTestAddition').data
         for row in unit_data:
             answer = float(row['Result: '])
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), answer)
@@ -36,7 +36,7 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.result, answer)
 
     def test_divide_calculator(self):
-        unit_data = CsvReader('../tests/unitTests/UnitTestDivision').data
+        unit_data = CsvReader('/tests/unitTests/UnitTestDivision').data
 
         for row in unit_data:
             answer = float(row['Result: '])
