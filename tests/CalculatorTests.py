@@ -2,6 +2,7 @@ import unittest
 
 from src.calculator.Calculator import Calculator
 from src.CSVreader.CsvReader import CsvReader
+from operations.Division import division
 
 
 class MyTestCase(unittest.TestCase):
@@ -42,6 +43,7 @@ class MyTestCase(unittest.TestCase):
             answer = float(row['Result: '])
             self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), answer)
             self.assertEqual(self.calculator.result, answer)
+            self.assertRaises(ZeroDivisionError, division, 1, 0)
 
     def test_root_calculator(self):
         unit_data = CsvReader('tests/unitTests/UnitTestSquareRoot').data
