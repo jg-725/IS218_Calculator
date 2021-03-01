@@ -1,5 +1,7 @@
-FROM python:3.9.1
+FROM python:3.7
 
-ADD src /src
+ADD . .
 
-CMD [ "python", "-m","unittest", "/tests/CalculatorTests.py" ]
+RUN pip install -r requirements
+
+CMD [ "python", "-m", "unittest", "discover", "-s", "Tests" ]
